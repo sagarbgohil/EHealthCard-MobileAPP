@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2">
+
+    <LinearLayout
+        android:id="@+id/top1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:gravity="center_horizontal"
+            android:text="E-HealthCard"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:textColor="#333232"
+            android:textSize="35sp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_below="@id/top1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_below="@id/top1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:text="Registration"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:layout_marginTop="20dp"
+            android:textColor="#38b5f2"
+            android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22.3dp"
+                android:text="Enter First Name"
+                android:textColor="#38b5f2"
+                android:textSize="15sp" />
+            <EditText
+                android:id="@+id/fname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:maxLines="1"
+                android:paddingTop="5dp"
+                android:inputType="text"
+                android:textColorHint="#333232"
+                android:textSize="20sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#9e9e9e" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22.3dp"
+                android:text="Enter Middle Name"
+                android:textColor="#38b5f2"
+                android:textSize="15sp" />
+            <EditText
+                android:id="@+id/mname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingTop="5dp"
+                android:textColorHint="#333232"
+                android:textSize="20sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#9e9e9e" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22.3dp"
+                android:text="Enter Last Name"
+                android:textColor="#38b5f2"
+                android:textSize="15sp" />
+            <EditText
+                android:id="@+id/lname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:inputType="text"
+                android:paddingTop="5dp"
+                android:textColorHint="#333232"
+                android:textSize="20sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#9e9e9e" />
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22.3dp"
+            android:text="Enter Aadhar Card Number"
+            android:textColor="#38b5f2"
+            android:textSize="15sp" />
+            <EditText
+                android:id="@+id/aadhar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:maxLength="12"
+                android:maxLines="1"
+                android:inputType="number"
+                android:paddingTop="5dp"
+                android:textColorHint="#333232"
+                android:textSize="20sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#9e9e9e" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22.3dp"
+                android:text="Enter Phone Number"
+                android:textColor="#38b5f2"
+                android:textSize="15sp" />
+            <EditText
+                android:id="@+id/number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:inputType="number"
+                android:paddingTop="5dp"
+                android:textColorHint="#333232"
+                android:textSize="20sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#9e9e9e" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22.3dp"
+                android:text="Enter Email ID"
+                android:textColor="#38b5f2"
+                android:textSize="15sp" />
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:maxLines="1"
+                android:inputType="textEmailAddress"
+                android:paddingTop="5dp"
+                android:textColorHint="#333232"
+                android:textSize="20sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#9e9e9e" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22.3dp"
+                android:text="Enter Address"
+                android:textColor="#38b5f2"
+                android:textSize="15sp" />
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:paddingTop="5dp"
+                android:lines="3"
+                android:textColorHint="#333232"
+                android:textSize="20sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#9e9e9e" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22.3dp"
+            android:text="Enter Password"
+            android:textColor="#38b5f2"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
+
+            <EditText
+                android:id="@+id/pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:maxLines="1"
+                android:textColor="#333232"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/pass_eye1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/show"
+                android:layout_alignParentRight="true"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@id/pass"
+                android:background="#9e9e9e" />
+
+        </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22.3dp"
+                android:text="Confirm Password"
+                android:textColor="#38b5f2"
+                android:textSize="15sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
+
+            <EditText
+                android:id="@+id/repass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:maxLines="1"
+                android:textColor="#333232"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/pass_eye2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/show"
+                android:layout_alignParentRight="true"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@id/repass"
+                android:background="#9e9e9e" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/login_button_bk"
+            android:gravity="center"
+            android:onClick="register"
+            android:text="Register"
+            android:textColor="#ffffff"
+            android:textSize="23sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\u00a9 E-HealthCard"
+            android:layout_marginBottom="10dp"
+            android:textColor="#333232"
+            android:layout_gravity="center"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    </ScrollView>
+
+</RelativeLayout>
+<!--    <EditText-->
+<!--        android:id="@+id/fname"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter First Name"-->
+<!--        android:inputType="text"-->
+<!--        android:layout_below="@+id/title"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        />-->
+
+
+<!--    <EditText-->
+<!--        android:id="@+id/mname"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter Middle Name"-->
+<!--        android:inputType="text"-->
+<!--        android:layout_below="@+id/fname"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        />-->
+<!--    <EditText-->
+<!--        android:id="@+id/lname"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter Last Name"-->
+<!--        android:inputType="text"-->
+<!--        android:layout_below="@+id/mname"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        />-->
+<!--    <EditText-->
+<!--        android:id="@+id/aadhar"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter Aadhar Card Number"-->
+<!--        android:inputType="number"-->
+<!--        android:maxLength="12"-->
+<!--        android:layout_below="@+id/lname"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/number"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter Phone Number"-->
+<!--        android:maxLength="10"-->
+<!--        android:inputType="number"-->
+<!--        android:layout_below="@+id/aadhar"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        />-->
+<!--    <EditText-->
+<!--        android:id="@+id/email"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter Email ID"-->
+<!--        android:inputType="textEmailSubject"-->
+<!--        android:layout_below="@+id/number"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        />-->
+<!--    <EditText-->
+<!--        android:id="@+id/address"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="90dp"-->
+<!--        android:hint="Enter Address"-->
+<!--        android:inputType="textPostalAddress"-->
+<!--        android:layout_below="@+id/email"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/pass"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter password"-->
+<!--        android:maxLength="16"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:layout_below="@+id/address"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        />-->
+<!--    <EditText-->
+<!--        android:id="@+id/rePass"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Confirm password"-->
+<!--        android:maxLength="16"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:layout_below="@+id/pass"-->
+<!--        android:layout_centerHorizontal="true"-->
+
+<!--    <Button-->
+<!--        android:id="@+id/submit_Button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="register"-->
+<!--        android:onClick="register"-->
+<!--        android:layout_below="@+id/rePass"-->
+<!--        android:layout_centerHorizontal="true"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/text"-->
+<!--        android:layout_below="@+id/submit_Button"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"/>-->

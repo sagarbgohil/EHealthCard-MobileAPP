@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home_fragment"
+            android:icon="@drawable/home"
+            android:title="Home"
+            />
+        <item
+            android:id="@+id/static_info"
+            android:icon="@drawable/patient"
+            android:title="Static Information"
+            />
+        <item
+            android:id="@+id/dynamic_info"
+            android:icon="@drawable/patient"
+            android:title="Dynamic Information"
+        />
+        <item
+            android:id="@+id/profile_patient"
+            android:icon="@drawable/ic_action_name"
+            android:title="Profile" />
+        <item
+            android:id="@+id/edit_profile"
+            android:icon="@drawable/setting"
+            android:title="Edit Profile" />
+        <item
+            android:id="@+id/change_pass"
+            android:icon="@drawable/setting"
+            android:title="Change Password" />
+        <item
+            android:id="@+id/FAQs"
+            android:icon="@drawable/faqs"
+            android:title="FAQs" />
+        <item
+            android:id="@+id/contact_us"
+            android:icon="@drawable/contact_us"
+            android:title="Contact Us" />
+        <item
+            android:id="@+id/about_us"
+            android:icon="@drawable/about_us"
+            android:title="About Us" />
+        <item
+            android:id="@+id/logout_patient"
+            android:icon="@drawable/logout"
+            android:title="Logout"/>
+    </group>
+</menu>

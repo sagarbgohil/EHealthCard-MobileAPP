@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2">
+
+    <LinearLayout
+        android:id="@+id/top1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Static Information"
+            android:textSize="30sp"
+            android:textColor="#333232"
+            android:layout_marginLeft="30dp"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/top1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="#fff">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center_horizontal"
+                    android:text="Your Details"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:layout_margin="20dp"
+                    android:textColor="#38b5f2"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Date Of Birth"
+                    android:textColor="#38b5f2"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/tv_dob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingTop="5dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:text="none"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Gender"
+                    android:textColor="#38b5f2"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/tv_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingTop="5dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:text="none"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Emergency Mobile Number"
+                    android:textColor="#38b5f2"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/tv_emergency_mobile_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingTop="5dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:text="none"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Height (cm)"
+                    android:textColor="#38b5f2"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/tv_height"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingTop="5dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:text="none"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Weight (kg)"
+                    android:textColor="#38b5f2"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/tv_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingTop="5dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:text="none"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Allergies"
+                    android:textColor="#38b5f2"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/tv_allergies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingTop="5dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:text="none"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Current Medication"
+                    android:textColor="#38b5f2"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/tv_current_medication"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingTop="5dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:text="none"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Blood Group"
+                    android:textColor="#38b5f2"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/tv_blood_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingTop="5dp"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:text="none"/>
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:text="Edit Details"
+                    android:onClick="editStaticInfo"
+                    android:gravity="center"
+                    android:layout_margin="20dp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center"
+                    android:background="@drawable/login_button_bk"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
+</RelativeLayout>

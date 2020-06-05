@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2">
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/home_card_0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:src="@drawable/doctor"/>
+
+            <TextView
+                android:id="@+id/name_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@id/logo"
+                android:textSize="25sp"
+                android:textColor="#38b5f2"
+                />
+
+            <TextView
+                android:id="@+id/aadhar_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/logo"
+                android:text="none"
+                android:layout_below="@id/name_home"
+                android:layout_margin="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#38b5f2"
+                android:textSize="14sp"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/home_card_1"
+        android:layout_below="@id/home_card_0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome!"
+                android:layout_margin="10dp"
+                android:textSize="25sp"
+                android:textColor="#38b5f2"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="E-HealthCard digitizes healthcare information for all healthcare consumers and providers globally."
+                android:layout_below="@id/title1"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:textColor="#000"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/home_card_2"
+        android:layout_below="@id/home_card_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Team"
+                android:layout_margin="10dp"
+                android:textSize="25sp"
+                android:textColor="#38b5f2"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="E-HealthCard has a vibrant and young team that is passionate about changing the way healthcare is managed across the world. Our vision is to bring equality in healthcare delivery through wellness for mankind beyond medicine."
+                android:layout_below="@id/title2"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:textColor="#000"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_below="@id/home_card_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mission"
+                android:layout_margin="10dp"
+                android:textSize="25sp"
+                android:textColor="#38b5f2"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="E-HealthCard is an organisation that assimilates resources which helps to create a health ecosystem that brings connectivity for unified health management and deliverys."
+                android:layout_below="@id/title3"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
+                android:textColor="#000"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

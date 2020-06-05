@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.e_healthcard">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/doctor"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".dyn_info_card_view"></activity>
+        <activity android:name=".ContactUs" />
+        <activity android:name=".AboutUs" />
+        <activity android:name=".FAQ" />
+        <activity android:name=".Home" />
+        <activity android:name=".RegistrationSuccess" />
+        <activity android:name=".StaticInfoView" />
+        <activity android:name=".ChangePassword" />
+        <activity android:name=".EditProfile" />
+        <activity android:name=".DynamicInfo" />
+        <activity android:name=".StaticInformation" />
+        <activity android:name=".Login" />
+        <activity android:name=".ForgotPass" />
+        <activity
+            android:name=".PatientHome"
+            android:label="@string/title_activity_patient_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RegisterPage"
+            android:label="Register Here" />
+        <activity
+            android:name=".Splash"
+            android:label="E-HealthCard">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>

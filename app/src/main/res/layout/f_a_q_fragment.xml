@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2">
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FAQs"
+            android:textSize="30sp"
+            android:textColor="#333232"
+            android:layout_marginLeft="30dp"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_below="@id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/q1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_q1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="How can I join E-HealthCard?"
+                        android:layout_margin="10dp"
+                        android:textSize="20sp"
+                        android:textColor="#38b5f2"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="You can register for the E-HealthCard by visiting by visiting here."
+                        android:layout_below="@id/tv_q1"
+                        android:layout_margin="10dp"
+                        android:textSize="15sp"
+                        android:textColor="#000"
+                        />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/q2"
+                android:layout_below="@id/q1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_q2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="How do I delete my account?"
+                        android:layout_margin="10dp"
+                        android:textSize="20sp"
+                        android:textColor="#38b5f2"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Currently, an account data cannot be deleted from our system. We are working on that feature."
+                        android:layout_below="@id/tv_q2"
+                        android:layout_margin="10dp"
+                        android:textSize="15sp"
+                        android:textColor="#000"
+                        />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/q3"
+                android:layout_below="@+id/q2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_q3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Who benfits from E-HealthCard?"
+                        android:layout_margin="10dp"
+                        android:textSize="20sp"
+                        android:textColor="#38b5f2"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="E-HealthCard is primarily useful to all its users to digitally store and maintain their medical history. However, it is also useful to the doctors (to refer to patients’s data anytime), emergency responders and chemists."
+                        android:layout_below="@id/tv_q3"
+                        android:layout_margin="10dp"
+                        android:textSize="15sp"
+                        android:textColor="#000"
+                        />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/q4"
+                android:layout_below="@+id/q3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_q4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="From where can I change my dynamic records?"
+                        android:layout_margin="10dp"
+                        android:textSize="20sp"
+                        android:textColor="#38b5f2"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="You cannot change your dynamic records. The data is added by the doctors as a part of their consultation and diagnostic process. You can make changes to your profile information and your static information."
+                        android:layout_below="@id/tv_q4"
+                        android:layout_margin="10dp"
+                        android:textSize="15sp"
+                        android:textColor="#000"
+                        />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/q5"
+                android:layout_below="@id/q4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_q5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="How do I delete my account?"
+                        android:layout_margin="10dp"
+                        android:textSize="20sp"
+                        android:textColor="#38b5f2"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Currently, an account data cannot be deleted from our system. We are working on that feature."
+                        android:layout_below="@id/tv_q5"
+                        android:layout_margin="10dp"
+                        android:textSize="15sp"
+                        android:textColor="#000"
+                        />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/q6"
+                android:layout_below="@+id/q5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_q6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="I have applied for a doctor's account and it still hasn't been approved. Where and who do I contact?"
+                        android:layout_margin="10dp"
+                        android:textSize="20sp"
+                        android:textColor="#38b5f2"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Just shoot us a mail here with your id and name."
+                        android:layout_below="@id/tv_q6"
+                        android:layout_margin="10dp"
+                        android:textSize="15sp"
+                        android:textColor="#000"
+                        />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/q7"
+                android:layout_below="@+id/q6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_q7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Who will be able to access my medical history?"
+                        android:layout_margin="10dp"
+                        android:textSize="20sp"
+                        android:textColor="#38b5f2"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your static information will be available to everyone provided your ‘id’. Your dynamic information will only be visible to you and doctors."
+                        android:layout_below="@id/tv_q7"
+                        android:layout_margin="10dp"
+                        android:textSize="15sp"
+                        android:textColor="#000"
+                        />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/q8"
+                android:layout_below="@+id/q7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_q8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Where is the iPhone version of the app?"
+                        android:layout_margin="10dp"
+                        android:textSize="20sp"
+                        android:textColor="#38b5f2"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="We're working hard on it."
+                        android:layout_below="@id/tv_q8"
+                        android:layout_margin="10dp"
+                        android:textSize="15sp"
+                        android:textColor="#000"
+                        />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_below="@+id/q8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_q9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Can I book an appointment through E-HealthCard?"
+                        android:layout_margin="10dp"
+                        android:textSize="20sp"
+                        android:textColor="#38b5f2"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Not currently, but we're working on it."
+                        android:layout_below="@id/tv_q9"
+                        android:layout_margin="10dp"
+                        android:textSize="15sp"
+                        android:textColor="#000"
+                        />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
