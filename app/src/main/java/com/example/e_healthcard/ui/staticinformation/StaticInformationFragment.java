@@ -32,7 +32,11 @@ import com.example.e_healthcard.ui.staticinfoview.StaticInfoViewFragment;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class StaticInformationFragment extends Fragment {
@@ -45,6 +49,8 @@ public class StaticInformationFragment extends Fragment {
     TextView dob;
     EditText blood_grp, allergies, current_medication, emergency_con, height, weight;
     RadioButton female, male;
+    SimpleDateFormat dateFormatter;
+
 
     public static StaticInformationFragment newInstance() {
         return new StaticInformationFragment();
@@ -85,11 +91,19 @@ public class StaticInformationFragment extends Fragment {
                             blood_grp.setText(response.getString("bloodgroup"));
                             allergies.setText(response.getString("allergies"));
                             current_medication.setText(response.getString("current_medication"));
-                            dob.setText(response.getString("dob"));
-                            emergency_con.setText(response.getString("emergency_contact"));
+                             emergency_con.setText(response.getString("emergency_contact"));
 
                             if(response.getString("gender").equals("male")) male.setChecked(true);
                             else if(response.getString("gender").equals("female")) female.setChecked(true);
+
+//                            Date date = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss").parse(response.getString("dob"));
+//                            Calendar cal = Calendar.getInstance();
+//                            cal.setTime(date);
+//                            dob.setText(cal.get(Calendar.YEAR) + "-" + cal.get(Calendar.MONTH) + "-" + cal.get(Calendar.DAY_OF_MONTH));
+
+                            Date date = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss").parse(response.getString("dob"));
+                            dob.setText(new SimpleDateFormat("yyyy-MM-dd").format(date).toString());
+
                         }
                         catch (Exception e){
                             e.printStackTrace();
