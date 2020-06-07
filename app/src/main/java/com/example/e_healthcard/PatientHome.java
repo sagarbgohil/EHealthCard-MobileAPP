@@ -63,6 +63,7 @@ import java.util.Map;
 public class PatientHome extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    String result;
     TextView pa_name, pa_aadhar;
     Fragment fg = null;
     RequestQueue queue;
@@ -258,7 +259,7 @@ public class PatientHome extends AppCompatActivity
             Map<String, String> postParam = new HashMap<String, String>();
             Log.d("sagar", dob.getText().toString());
             postParam.put("dob", dob.getText().toString());
-            postParam.put("gender", String.valueOf(findGender()[0]));
+            postParam.put("gender", String.valueOf(findGender()));
             postParam.put("emergency_contact", emergency_con_num.getText().toString());
             postParam.put("height", height.getText().toString());
             postParam.put("weight", weight.getText().toString());
@@ -272,6 +273,13 @@ public class PatientHome extends AppCompatActivity
                 public void onResponse(JSONObject response) {
                     Log.d("sagar", "Static Info Uploaded Successfully!");
                     Toast.makeText(getApplicationContext(), "Details Uploaded Successfully!", Toast.LENGTH_SHORT).show();
+
+                    Fragment fg = new StaticInfoViewFragment();
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.frame_patient_home, fg);
+                    ft.commit();
+                    DrawerLayout drawer = findViewById(R.id.drawer_layout);
+                    drawer.closeDrawer(GravityCompat.START);
                 }
             }, new Response.ErrorListener() {
                 @Override
@@ -298,14 +306,13 @@ public class PatientHome extends AppCompatActivity
         }
     }
 
-    public String[] findGender(){
-        final String[] result = new String[1];
-        if(rg.getCheckedRadioButtonId() == R.id.radio_male) result[0] = "male";
-        else if(rg.getCheckedRadioButtonId() == R.id.radio_female) result[0] = "female";
+    public String findGender(){
+        if(rg.getCheckedRadioButtonId() == R.id.radio_male) result = "male";
+        else if(rg.getCheckedRadioButtonId() == R.id.radio_female) result = "female";
         return result;
     }
-    //handled static info select dob textview onclick event
 
+    //handled static info select dob textview onclick event
     public void selectDOB(View view){
         DatePickerDialog DOB;
         final SimpleDateFormat dateFormatter;

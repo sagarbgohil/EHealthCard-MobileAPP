@@ -14,6 +14,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
@@ -37,11 +39,16 @@ public class StaticInformationFragment extends Fragment {
 
     private StaticInformationViewModel mViewModel;
 
+    String token;
+    Database db;
+    RequestQueue queue;
+    TextView dob;
+    EditText blood_grp, allergies, current_medication, emergency_con, height, weight;
+    RadioButton female, male;
+
     public static StaticInformationFragment newInstance() {
         return new StaticInformationFragment();
     }
-
-
 
     @Nullable
     @Override
@@ -49,6 +56,70 @@ public class StaticInformationFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         Log.d("sagar", "Static Info Fragment");
+
+
+        queue = Volley.newRequestQueue(getContext());
+        db = new Database(getContext());
+
+        String url = getString(R.string.url) + "api/users/static_information";
+        // Taking users details
+        JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d("sagar", "Static info fatched on static info edit fragment!");
+
+                        try{
+                            height = getView().findViewById(R.id.et_height_sta_info);
+                            weight = getView().findViewById(R.id.et_weight_sta_info);
+                            blood_grp = getView().findViewById(R.id.et_blood_grp_sta_info);
+                            allergies = getView().findViewById(R.id.et_allergies_sta_info);
+                            current_medication = getView().findViewById(R.id.et_current_medication_sta_info);
+                            dob = getView().findViewById(R.id.select_dob);
+                            emergency_con = getView().findViewById(R.id.et_emergency_con_num);
+                            female = getView().findViewById(R.id.radio_female);
+                            male = getView().findViewById(R.id.radio_male);
+
+                            height.setText(response.getString("height"));
+                            weight.setText(response.getString("weight"));
+                            blood_grp.setText(response.getString("bloodgroup"));
+                            allergies.setText(response.getString("allergies"));
+                            current_medication.setText(response.getString("current_medication"));
+                            dob.setText(response.getString("dob"));
+                            emergency_con.setText(response.getString("emergency_contact"));
+
+                            if(response.getString("gender").equals("male")) male.setChecked(true);
+                            else if(response.getString("gender").equals("female")) female.setChecked(true);
+                        }
+                        catch (Exception e){
+                            e.printStackTrace();
+                            Log.d("sagar", "error in set values on static info edit fragment");
+                        }
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d("sagar", "Static info not fatched on static info edit fragment!");
+                    }
+                }
+        ) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                Cursor res = db.getToken();
+                if (res.getCount() == -1) Log.d("sagar", "token not found on home page");
+                else {
+                    res.moveToNext();
+                    token = res.getString(0);
+                    headers.put("Authorization", "Bearer " + token);
+                }
+                return headers;
+            }
+        };
+        // add it to the RequestQueue
+        queue.add(getRequest);
 
         return inflater.inflate(R.layout.static_information_fragment, container, false);
     }
