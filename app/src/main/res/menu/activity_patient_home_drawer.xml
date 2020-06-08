@@ -22,14 +22,14 @@
             android:id="@+id/profile_patient"
             android:icon="@drawable/ic_action_name"
             android:title="Profile" />
-        <item
-            android:id="@+id/edit_profile"
-            android:icon="@drawable/setting"
-            android:title="Edit Profile" />
-        <item
-            android:id="@+id/change_pass"
-            android:icon="@drawable/setting"
-            android:title="Change Password" />
+<!--        <item-->
+<!--            android:id="@+id/edit_profile"-->
+<!--            android:icon="@drawable/setting"-->
+<!--            android:title="Edit Profile" />-->
+<!--        <item-->
+<!--            android:id="@+id/change_pass"-->
+<!--            android:icon="@drawable/setting"-->
+<!--            android:title="Change Password" />-->
         <item
             android:id="@+id/FAQs"
             android:icon="@drawable/faqs"

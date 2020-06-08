@@ -1,5 +1,8 @@
 package com.example.e_healthcard.ui.profilepatient;
 
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.database.Cursor;
@@ -30,6 +33,9 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.e_healthcard.Database;
 import com.example.e_healthcard.R;
+import com.example.e_healthcard.ui.changepassword.ChangePasswordFragment;
+import com.example.e_healthcard.ui.editprofile.EditProfileFragment;
+import com.example.e_healthcard.ui.staticinformation.StaticInformationFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,7 +43,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ProfilePatientFragment extends Fragment {
+public class ProfilePatientFragment extends Fragment{
 
     private ProfilePatientViewModel mViewModel;
     TextView fname, mname, lname, email, aadhar_card, mobile_number, address, name;

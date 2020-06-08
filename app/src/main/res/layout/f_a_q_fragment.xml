@@ -47,20 +47,32 @@
                         android:id="@+id/tv_q1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="How can I join E-HealthCard?"
+                        android:text="How can I join E-HealthCard as a Doctor?"
                         android:layout_margin="10dp"
                         android:textSize="20sp"
                         android:textColor="#38b5f2"
                         />
 
                     <TextView
+                        android:id="@+id/comment"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="You can register for the E-HealthCard by visiting by visiting here."
+                        android:text="First, you register yourself as a regular user, and then click here."
                         android:layout_below="@id/tv_q1"
                         android:layout_margin="10dp"
                         android:textSize="15sp"
                         android:textColor="#000"
+                        />
+                    <TextView
+                        android:id="@+id/url"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="http://68.183.87.252/doctor/register"
+                        android:layout_below="@id/comment"
+                        android:layout_margin="10dp"
+                        android:textSize="15sp"
+                        android:onClick="openWebsite"
+                        android:textColor="#38b5f2"
                         />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>

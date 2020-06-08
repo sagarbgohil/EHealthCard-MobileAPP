@@ -91,7 +91,7 @@ public class StaticInformationFragment extends Fragment {
                             blood_grp.setText(response.getString("bloodgroup"));
                             allergies.setText(response.getString("allergies"));
                             current_medication.setText(response.getString("current_medication"));
-                             emergency_con.setText(response.getString("emergency_contact"));
+                            emergency_con.setText(response.getString("emergency_contact"));
 
                             if(response.getString("gender").equals("male")) male.setChecked(true);
                             else if(response.getString("gender").equals("female")) female.setChecked(true);

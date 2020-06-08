@@ -257,7 +257,6 @@ public class PatientHome extends AppCompatActivity
         else if(current_medi.getText().toString().isEmpty()) current_medi.setError("Required!");
         else {
             Map<String, String> postParam = new HashMap<String, String>();
-            Log.d("sagar", dob.getText().toString());
             postParam.put("dob", dob.getText().toString());
             postParam.put("gender", String.valueOf(findGender()));
             postParam.put("emergency_contact", emergency_con_num.getText().toString());
@@ -465,6 +464,18 @@ public class PatientHome extends AppCompatActivity
         return flag;
     }
 
+    public void backToProfile(View v){
+        Fragment fg = new ProfilePatientFragment();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.frame_patient_home, fg);
+        ft.commit();
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+    }
+
+    public void openWebsite(View v){
+
+    }
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -476,8 +487,8 @@ public class PatientHome extends AppCompatActivity
             else if(false == staticInfoFound()) fg = new StaticInfoViewFragment();
         } else if (id == R.id.dynamic_info) fg = DynamicInfoFragment.newInstance();
         else if (id == R.id.profile_patient) fg = ProfilePatientFragment.newInstance();
-        else if (id == R.id.edit_profile) fg = EditProfileFragment.newInstance();
-        else if (id == R.id.change_pass) fg = ChangePasswordFragment.newInstance();
+//        else if (id == R.id.edit_profile) fg = EditProfileFragment.newInstance();
+//        else if (id == R.id.change_pass) fg = ChangePasswordFragment.newInstance();
         else if (id == R.id.home_fragment) fg = HomeFragment.newInstance();
         else if (id == R.id.FAQs) fg = FAQFragment.newInstance();
         else if (id == R.id.about_us) fg = AboutUsFragment.newInstance();
@@ -507,6 +518,8 @@ public class PatientHome extends AppCompatActivity
 
     //logout method handled
     public void logout(){
+
+        Log.d("sagar", "Logout selected!");
         //Delete token request to server
         String url = getString(R.string.url) + "api/users/token";
         // Taking users details
@@ -519,6 +532,7 @@ public class PatientHome extends AppCompatActivity
                         Integer res = db.deleteData();
                         if (res > 0) {
                             Log.d("sagar", "Local token Deleted");
+                            Log.d("sagar", "Logout Successfully!");
                             Intent i = new Intent(getApplicationContext(), Login.class);
                             startActivity(i);
                             finish();
@@ -557,23 +571,23 @@ public class PatientHome extends AppCompatActivity
         super.onDestroy();
     }
 
-    //    //handled method for edit profile button of profile menu
-//    public void editProfile() {
-//        Fragment fg = new EditProfileFragment();
-//        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//        ft.replace(R.id.frame_patient_home, fg);
-//        ft.commit();
-//        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-//        drawer.closeDrawer(GravityCompat.START);
-//    }
-//
-//    // handled method for change password button of profile menu
-//    public void callChangePassword() {
-//        Fragment fg = new ChangePasswordFragment();
-//        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//        ft.replace(R.id.frame_patient_home, fg);
-//        ft.commit();
-//        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-//        drawer.closeDrawer(GravityCompat.START);
-//    }
+    //handled method for edit profile button of profile menu
+    public void editPro(View v) {
+        Fragment fg = new EditProfileFragment();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.frame_patient_home, fg);
+        ft.commit();
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+    }
+
+    // handled method for change password button of profile menu
+    public void cngPass(View v) {
+        Fragment fg = new ChangePasswordFragment();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.frame_patient_home, fg);
+        ft.commit();
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+    }
 }
