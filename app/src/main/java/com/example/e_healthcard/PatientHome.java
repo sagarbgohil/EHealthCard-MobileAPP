@@ -3,6 +3,7 @@ package com.example.e_healthcard;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.android.volley.AuthFailureError;
@@ -474,7 +475,11 @@ public class PatientHome extends AppCompatActivity
     }
 
     public void openWebsite(View v){
-
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        intent.setData(Uri.parse("http://68.183.87.252/doctor/register"));
+        startActivity(intent);
     }
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
