@@ -3,6 +3,7 @@ package com.example.e_healthcard;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -12,6 +13,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.e_healthcard.ui.aboutus.AboutUsFragment;
@@ -46,6 +48,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -480,6 +483,49 @@ public class PatientHome extends AppCompatActivity
         intent.addCategory(Intent.CATEGORY_BROWSABLE);
         intent.setData(Uri.parse("http://68.183.87.252/doctor/register"));
         startActivity(intent);
+    }
+
+    public void downloadQR(View v){
+        final String[] img_url = new String[1];
+        final String url = getString(R.string.url) + "api/users/qrcode";
+
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
+                url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.d("sagar", "QR Code Image URL found for download qr");
+                try {
+                    img_url[0] = getString(R.string.url) + response.getString("path");
+                    Intent intent = new Intent();
+                    intent.setAction(Intent.ACTION_VIEW);
+                    intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                    intent.setData(Uri.parse(img_url[0]));
+                    startActivity(intent);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d("sagar " + error);
+                Log.d("sagar", "QR code image url not found for doqnload qr");
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                Cursor res = db.getToken();
+                if (res.getCount() == -1) Log.d("sagar", "token not found on home page");
+                else {
+                    res.moveToNext();
+                    token = res.getString(0);
+                    headers.put("Authorization", "Bearer " + token);
+                }
+                return headers;
+            }
+        };
+        queue.add(jsonObjReq);
     }
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
