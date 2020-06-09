@@ -4,19 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Splash"
-    android:background="#f2f2f2">
+    android:background="@drawable/splash">
 
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:background="#f2f2f2">
         <ImageView
             android:id="@+id/logo"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
             android:src="@drawable/doctor"/>
 
         <TextView
@@ -24,10 +18,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/logo"
+            android:layout_marginLeft="120dp"
             android:text="E-"
             android:textSize="30sp"
-            android:textColor="#38b5f2"
-            tools:ignore="InvalidId" />
+            android:textColor="#fff"
+            />
 
         <TextView
             android:id="@+id/tv_title2"
@@ -39,10 +34,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:text="HealthCard"
-            android:textColor="#38b5f2"
+            android:textColor="#fff"
             android:textSize="30sp"
             tools:ignore="InvalidId" />
-
-    </RelativeLayout>
 
 </RelativeLayout>

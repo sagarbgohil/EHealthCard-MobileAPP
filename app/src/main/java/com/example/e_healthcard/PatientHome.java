@@ -3,7 +3,6 @@ package com.example.e_healthcard;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -13,7 +12,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.e_healthcard.ui.aboutus.AboutUsFragment;
@@ -25,6 +23,7 @@ import com.example.e_healthcard.ui.faq.FAQFragment;
 import com.example.e_healthcard.ui.home.HomeFragment;
 import com.example.e_healthcard.ui.profilepatient.ProfilePatientFragment;
 
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 
 import androidx.core.view.GravityCompat;
@@ -77,6 +76,10 @@ public class PatientHome extends AppCompatActivity
     RadioGroup rg;
     InputMethodManager imm;
     boolean flag;
+    ImageView old_eye, new_eye, con_new_eye;
+    EditText old_pass, new_pass, con_new_pass;
+    boolean f1, f2, f3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +108,9 @@ public class PatientHome extends AppCompatActivity
         FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
         ft1.replace(R.id.frame_patient_home, fg);
         ft1.commit();
+
+        //boolean initialize for onclick of change pass fragment
+        f1 = f2 = f3 = false;
 
     }
 
@@ -309,6 +315,7 @@ public class PatientHome extends AppCompatActivity
         }
     }
 
+    //return selected gender string from static info fragment
     public String findGender(){
         if(rg.getCheckedRadioButtonId() == R.id.radio_male) result = "male";
         else if(rg.getCheckedRadioButtonId() == R.id.radio_female) result = "female";
@@ -389,6 +396,7 @@ public class PatientHome extends AppCompatActivity
         queue.add(getRequest);
     }
 
+    //edit static info button on static info edit fragment onclick method handled
     public void editStaticInfo(View view){
         Fragment fg = new StaticInformationFragment();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -468,7 +476,8 @@ public class PatientHome extends AppCompatActivity
         return flag;
     }
 
-    public void backToProfile(View v){
+    //edit profile and change password back button onclick handled
+    public void backToProfile(View v) {
         Fragment fg = new ProfilePatientFragment();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frame_patient_home, fg);
@@ -477,6 +486,7 @@ public class PatientHome extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
     }
 
+    //FAQs page first quetion link onclick handled
     public void openWebsite(View v){
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
@@ -485,6 +495,7 @@ public class PatientHome extends AppCompatActivity
         startActivity(intent);
     }
 
+    //download qr textview onclick method handled
     public void downloadQR(View v){
         final String[] img_url = new String[1];
         final String url = getString(R.string.url) + "api/users/qrcode";
@@ -526,6 +537,54 @@ public class PatientHome extends AppCompatActivity
             }
         };
         queue.add(jsonObjReq);
+    }
+
+    //change pass eyes onclick handled
+    public void passEyePress(View v){
+        old_eye = findViewById(R.id.old_pass_eye);
+        new_eye = findViewById(R.id.new_pass_eye);
+        con_new_eye = findViewById(R.id.con_new_pass_eye);
+
+        old_pass = findViewById(R.id.old_pass);
+        new_pass = findViewById(R.id.new_pass);
+        con_new_pass = findViewById(R.id.con_new_pass);
+
+
+        switch (v.getId()) {
+            case R.id.old_pass_eye:
+                if (f1) {
+                    old_pass.setTransformationMethod(new PasswordTransformationMethod());
+                    old_eye.setImageDrawable(getResources().getDrawable(R.drawable.show));
+                    f1 = false;
+                } else {
+                    old_pass.setTransformationMethod(null);
+                    old_eye.setImageDrawable(getResources().getDrawable(R.drawable.hide));
+                    f1 = true;
+                }
+                break;
+            case R.id.new_pass_eye:
+                if (f2) {
+                    new_pass.setTransformationMethod(new PasswordTransformationMethod());
+                    new_eye.setImageDrawable(getResources().getDrawable(R.drawable.show));
+                    f2 = false;
+                } else {
+                    new_pass.setTransformationMethod(null);
+                    new_eye.setImageDrawable(getResources().getDrawable(R.drawable.hide));
+                    f2 = true;
+                }
+                break;
+            case R.id.con_new_pass_eye:
+                if (f3) {
+                    con_new_pass.setTransformationMethod(new PasswordTransformationMethod());
+                    con_new_eye.setImageDrawable(getResources().getDrawable(R.drawable.show));
+                    f3 = false;
+                } else {
+                    con_new_pass.setTransformationMethod(null);
+                    con_new_eye.setImageDrawable(getResources().getDrawable(R.drawable.hide));
+                    f3 = true;
+                }
+                break;
+        }
     }
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
