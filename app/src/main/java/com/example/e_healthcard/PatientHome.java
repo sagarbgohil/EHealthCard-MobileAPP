@@ -586,6 +586,7 @@ public class PatientHome extends AppCompatActivity
                 break;
         }
     }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {

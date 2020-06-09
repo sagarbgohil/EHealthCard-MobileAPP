@@ -10,12 +10,12 @@
             />
         <item
             android:id="@+id/static_info"
-            android:icon="@drawable/patient"
+            android:icon="@drawable/prescription"
             android:title="Static Information"
             />
         <item
             android:id="@+id/dynamic_info"
-            android:icon="@drawable/patient"
+            android:icon="@drawable/prescription"
             android:title="Dynamic Information"
         />
         <item
