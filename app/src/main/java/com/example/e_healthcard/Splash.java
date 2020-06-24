@@ -36,11 +36,11 @@ public class Splash extends AppCompatActivity {
                 finish();
             }
         }, SPLASH_TIME_OUT);
-        Animation myanim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.anim_splash);
+        Animation myanim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide);
         logo.startAnimation(myanim);
         Animation myanim2 = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide);
         t1.startAnimation(myanim2);
-        Animation myanim3 = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide2);
+        Animation myanim3 = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide);
         t2.startAnimation(myanim3);
 
     }

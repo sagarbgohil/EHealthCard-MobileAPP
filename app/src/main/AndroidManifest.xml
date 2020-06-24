@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".dyn_info_card_view"></activity>
+        <activity android:name=".Display"></activity>
         <activity android:name=".ContactUs" />
         <activity android:name=".AboutUs" />
         <activity android:name=".FAQ" />

@@ -52,25 +52,25 @@
                         android:layout_centerHorizontal="true"
                         android:src="@drawable/qr"/>
 
-                    <TextView
-                        android:id="@+id/downloadQR"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@id/qr"
-                        android:layout_marginTop="0dp"
-                        android:onClick="downloadQR"
-                        android:gravity="center"
-                        android:text="Download QR"
-                        android:textColor="#000"
-                        android:textSize="10sp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/downloadQR"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_below="@id/qr"-->
+<!--                        android:layout_marginTop="0dp"-->
+<!--                        android:onClick="downloadQR"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="Download QR"-->
+<!--                        android:textColor="#000"-->
+<!--                        android:textSize="10sp" />-->
 
                     <TextView
                         android:id="@+id/name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
-                        android:layout_below="@id/downloadQR"
+                        android:layout_below="@id/qr"
                         android:layout_centerHorizontal="true"
                         android:layout_margin="10dp"
                         android:textSize="20sp"

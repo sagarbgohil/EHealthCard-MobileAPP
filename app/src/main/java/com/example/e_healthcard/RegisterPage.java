@@ -22,6 +22,7 @@ import com.google.android.material.animation.ImageMatrixProperty;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -182,8 +183,26 @@ public class RegisterPage extends AppCompatActivity {
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    VolleyLog.d("sagar" + error);
-                    Toast.makeText(getApplicationContext(), "Error in Registration!", Toast.LENGTH_SHORT).show();
+                    VolleyLog.d("sagar" + error.getMessage());
+                    try{
+                        String responseBody = new String(error.networkResponse.data, "utf-8");
+//                        System.out.println(responseBody);
+//                        Log.d("sagar", responseBody);
+                        JSONObject data = new JSONObject(responseBody);
+                        String message = data.optString("message");
+                        Log.d("sagar", message);
+                        if (message.equals("Sorry! This email is already in use")){
+                            Toast.makeText(getApplicationContext(), "Registered Successfully!", Toast.LENGTH_SHORT).show();
+                            startActivity(i);
+                            finish();
+                        }
+                    }
+                    catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
+//                    Toast.makeText(getApplicationContext(), "Error in Registration!", Toast.LENGTH_SHORT).show();
                 }
             });
             queue.add(jsonObjReq);
