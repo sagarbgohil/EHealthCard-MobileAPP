@@ -1,4 +1,4 @@
 # EHealthCard
 
-* My diploma final year project*
-* Created in pure java*
+* My diploma final year project.
+* Created in pure java.
